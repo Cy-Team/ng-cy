@@ -1,0 +1,27 @@
+.cy-layout {
+    background-color: #edf4f9;
+    height: 100%;
+    width: 100%;
+    clear: both;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.cy-salarcore {
+    background-color: #fff;
+    padding: 5px;
+    border-bottom: 2px solid #edf4f9;
+}
+
+.cy-panel {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background-color: #fff;
+    padding-top: 0;
+    border-top: 2px solid #edf4f9;
+    overflow: hidden;
+}

@@ -1,0 +1,21 @@
+<div class="cy-layout">
+    <ng-container *ngIf="leftTmp">
+
+        <div class="cy-left" [ngStyle]="{ 'width.px': leftwidth }">
+            <ng-template [ngTemplateOutlet]="leftTmp" [ngTemplateOutletContext]="{ psnData: { name : '张三' } }"></ng-template>
+            <div class="swtch-tip" [ngClass]="{ 'cyhide': !swtchState }" (click)="switchTip()">
+                <!-- <i class="fa " [ngClass]="{ 'fa-ancye-double-left' : !swtchState, 'fa-ancye-double-right': swtchState }" aria-hidden="true"></i> -->
+                {{ swtchState? ')': '( '}}
+            </div>
+        </div>
+
+    </ng-container>
+    <div class="cy-area">
+        <ng-container *ngIf="rightTmp">
+            <div class="cy-carrier" [ngStyle]="{ 'margin-left.px ': leftwidth, 'background-color ': bgcolor }">
+                <ng-template [ngTemplateOutlet]=" rightTmp "></ng-template>
+            </div>
+        </ng-container>
+
+    </div>
+</div>

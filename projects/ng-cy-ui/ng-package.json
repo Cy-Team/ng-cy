@@ -1,0 +1,10 @@
+{
+    "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+    "dest": "../../dist/ng-cy-ui",
+    "lib": {
+        "entryFile": "components/ng-cy-ui.module.ts",
+        "umdModuleIds": {
+            "jquery": "$"
+        }
+    }
+}

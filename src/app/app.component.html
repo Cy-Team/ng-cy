@@ -1,0 +1,30 @@
+<cy-left-right [leftwidth]="260">
+    <ng-template let-scope="psnData" #left>
+        <h3>左右布局</h3>
+
+    </ng-template>
+    <ng-template #right>
+        <cy-up-down>
+            <ng-template #top>
+                <cy-step [StepSource]="StepSource">
+                    <ng-template #container let-title="title" let-content="content">
+                        <div> {{ title }}</div>
+                        <div> {{ content }}</div>
+                    </ng-template>
+                </cy-step>
+            </ng-template>
+            <ng-template #bottom>
+                <cy-headline [title]="'人员信息'">
+                    <ng-template #container>
+                        <a href="javascript:;">添加人员</a>
+                    </ng-template>
+                </cy-headline>
+                <div class="excelshow">
+                    <cy-doc-sign [TempHTML]="TempHTML" [(TempData)]="TempData" #excel1></cy-doc-sign>
+                    <!-- <cy-doc-sign></cy-doc-sign> -->
+                </div>
+                <button (click)="getTempData()">获得数据</button>
+            </ng-template>
+        </cy-up-down>
+    </ng-template>
+</cy-left-right>

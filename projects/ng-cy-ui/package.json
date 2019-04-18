@@ -1,0 +1,16 @@
+{
+    "name": "ng-cy-ui",
+    "version": "0.4.3",
+    "homepage": "https://fillchar.gitbook.io/cy",
+    "author": {
+        "name": "cyclone77",
+        "url": "https://github.com/Cyclone77"
+    },
+    "peerDependencies": {
+        "@angular/common": "^7.0.0",
+        "@angular/core": "^7.0.0",
+        "@angular/forms": "^7.0.0",
+        "jquery": "^3.3.1",
+        "ng-zorro-antd": "^7.2.0"
+    }
+}

@@ -1,0 +1,81 @@
+$current: #6cabf0; //当前
+$hover: #619ad8; //鼠标悬停
+$active: #0095ff; //选中
+
+$stepHeight: 60px; //步骤条高度
+$pointBorder: $stepHeight/2; //箭头边框
+$pointWidth: 10px; //箭头宽度（凹陷宽度）
+
+._step_item {
+    display: inline-block;
+    background-color: $current;
+    padding: 0 5px;
+    margin: 0 10px;
+    position: relative;
+    height: $stepHeight;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width: 0;
+        height: 0;
+        display: inline-block;
+        border-right: none;
+    }
+
+    &::before {
+        right: auto;
+        left: -10px;
+        border-bottom: $pointBorder solid $current;
+        border-left: $pointWidth solid transparent;
+        border-top: $pointBorder solid $current;
+    }
+
+    &::after {
+        right: -10px;
+        left: auto;
+        border-bottom: $pointBorder solid transparent;
+        border-left: $pointWidth solid $current;
+        border-top: $pointBorder solid transparent;
+    }
+
+    &:first-child::before,
+    &:last-child::after {
+        content: none;
+    }
+
+
+    &:hover,
+    &:focus {
+        background-color: $hover;
+
+        &::before {
+            border-top-color: $hover;
+            border-bottom-color: $hover;
+        }
+
+        &::after {
+            border-left-color: $hover;
+        }
+    }
+
+    &.active {
+        background-color: $active;
+
+        &::before {
+            border-top-color: $active;
+            border-bottom-color: $active;
+        }
+
+        &::after {
+            border-left-color: $active;
+        }
+    }
+}

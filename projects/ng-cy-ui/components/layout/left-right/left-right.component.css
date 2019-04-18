@@ -1,0 +1,55 @@
+.cy-layout {
+    height: 100%;
+    width: 100%;
+    clear: both;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.cy-left {
+    width: 200px;
+    border-right: 2px solid #EFF2F7;
+    height: 100%;
+    float: left;
+    background-color: #fff;
+    position: relative;
+    margin-right: -200px;
+}
+
+.cy-left .swtch-tip {
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    right: -16px;
+    bottom: 0;
+    width: 16px;
+    height: 36px;
+    line-height: 34px;
+    margin: auto;
+    cursor: pointer;
+    color: #fff;
+    background-color: #34c094;
+    padding-left: 5px;
+}
+
+.cyhide {
+    display: none;
+}
+
+.cy-left:hover .swtch-tip {
+    display: inline-block;
+}
+
+.cy-area {
+    width: 100%;
+    height: 100%;
+    /* float: right; */
+}
+
+.cy-carrier {
+    height: 100%;
+    position: relative;
+    background-color: #fff;
+    margin-left: 200px;
+    overflow: hidden;
+}

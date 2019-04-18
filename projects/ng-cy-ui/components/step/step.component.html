@@ -1,0 +1,19 @@
+<!-- <div class="_cy_step">
+    <div class="_step_item">
+        02-02前报名
+    </div>
+    <div class="_step_item">
+        02-04前制作方案
+    </div>
+    <div class="_step_item">
+        02-06前公告挂网
+    </div>
+</div> -->
+<div class="_cy_step">
+    <ng-container *ngFor="let item of StepSource;let i=index;">
+        <div class="_step_item {{ selectorStepIndex===i? 'active': ''}}" (click)="selectorStep(i)">
+            <ng-template [ngTemplateOutlet]="containerTemp" [ngTemplateOutletContext]="item">
+            </ng-template>
+        </div>
+    </ng-container>
+</div>
