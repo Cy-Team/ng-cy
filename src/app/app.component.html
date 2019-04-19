@@ -6,12 +6,13 @@
     <ng-template #right>
         <cy-up-down>
             <ng-template #top>
-                <cy-step [StepSource]="StepSource">
-                    <ng-template #container let-title="title" let-content="content">
+                <cy-step [(StepSource)]="StepSource" [SelectorStepIndex]="SelectorStepIndex">
+                    <!-- <ng-template #container let-title="title" let-content="content">
                         <div> {{ title }}</div>
                         <div> {{ content }}</div>
-                    </ng-template>
+                    </ng-template> -->
                 </cy-step>
+                <button (click)="print()">获取数据</button>
             </ng-template>
             <ng-template #bottom>
                 <cy-headline [title]="'人员信息'">

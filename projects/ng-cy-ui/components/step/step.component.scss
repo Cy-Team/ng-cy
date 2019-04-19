@@ -6,10 +6,13 @@ $stepHeight: 60px; //步骤条高度
 $pointBorder: $stepHeight/2; //箭头边框
 $pointWidth: 10px; //箭头宽度（凹陷宽度）
 
+$labelFontSize: 16px;
+$labelColor: #fff;
+
 ._step_item {
     display: inline-block;
     background-color: $current;
-    padding: 0 5px;
+    padding: 4px 20px 6px 20px;
     margin: 0 10px;
     position: relative;
     height: $stepHeight;
@@ -77,5 +80,25 @@ $pointWidth: 10px; //箭头宽度（凹陷宽度）
         &::after {
             border-left-color: $active;
         }
+    }
+
+    ._top {
+        color: $labelColor;
+        font-size: 18px;
+
+        ._time_selector {
+            z-index: -99;
+            position: absolute;
+        }
+
+        ._time_val {
+            display: inline-block;
+            width: 50px;
+        }
+    }
+
+    ._bottom {
+        color: $labelColor;
+        font-size: $labelFontSize;
     }
 }

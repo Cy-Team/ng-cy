@@ -8,11 +8,13 @@ import { Component, OnInit, Input, ContentChild, ElementRef } from '@angular/cor
 export class StepComponent implements OnInit {
 
   @Input() StepSource: any[];
+  @Input() SelectorStepIndex: number;
   @ContentChild('container') containerTemp: ElementRef;
 
-  selectorStepIndex: number;
-  constructor() { }
 
+  // TimeOpen: boolean;
+  date = null; // new Date();
+  constructor() { }
   ngOnInit() {
   }
 
@@ -21,6 +23,14 @@ export class StepComponent implements OnInit {
    * @param index 选中索引
    */
   selectorStep(index) {
-    this.selectorStepIndex = index;
+    this.SelectorStepIndex = index;
+  }
+
+  showDatePicker(item) {
+    item.TimeOpen = !item.TimeOpen;
+  }
+
+  onChange(e, item) {
+    item.TimeOpen = false;
   }
 }

@@ -10,14 +10,15 @@ export class AppComponent implements OnInit {
   title = 'ng-cy';
   filename = 'assets/1.html';
   TempHTML = '';
+  SelectorStepIndex = 1;
   StepSource = [{
-    title: '标题1',
+    date: '2019-02-02',
     content: '内容1'
   }, {
-    title: '标题2',
+    date: '2019-02-04',
     content: '内容2'
   }, {
-    title: '标题2',
+    date: '2019-02-05',
     content: '内容2'
   }];
 
@@ -113,6 +114,9 @@ export class AppComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    setTimeout(() => {
+      this.SelectorStepIndex = 3;
+    }, 2000);
     this.http.get(this.filename, { responseType: 'text' })
       .subscribe(data => this.TempHTML = data);
 
@@ -121,5 +125,9 @@ export class AppComponent implements OnInit {
 
   getTempData() {
     console.log(this.TempData);
+  }
+
+  print() {
+    console.log(this.StepSource);
   }
 }
