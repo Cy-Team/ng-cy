@@ -27,6 +27,12 @@ export class StepComponent implements OnInit {
   }
 
   showDatePicker(item) {
+    this.StepSource = this.StepSource.map(v => {
+      if (v !== item) {
+        v.TimeOpen = false;
+      }
+      return v;
+    });
     item.TimeOpen = !item.TimeOpen;
   }
 

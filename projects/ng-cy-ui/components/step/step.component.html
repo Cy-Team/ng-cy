@@ -15,12 +15,15 @@
             <ng-template [ngTemplateOutlet]="containerTemp" [ngTemplateOutletContext]="item">
             </ng-template>
             <ng-container *ngIf="!containerTemp">
-                <div class="_top">
+                <div class="_top {{ !!item.disabled ? '_disabled' : ''}}">
                     <span class="_time_val">{{ item.date | date: 'MM-dd' }}</span>
-                    <div class="_time_selector">
-                        <nz-date-picker [nzOpen]="item.TimeOpen" [(ngModel)]="item.date"
-                            (ngModelChange)="onChange($event, item)"></nz-date-picker>
-                    </div>
+                    
+                    <ng-container *ngIf="!item.disabled">
+                        <div class="_time_selector">
+                            <nz-date-picker [nzOpen]="item.TimeOpen" [(ngModel)]="item.date"
+                                (ngModelChange)="onChange($event, item)"></nz-date-picker>
+                        </div>
+                    </ng-container>
                     <i nz-icon nzType="calendar" nzTheme="outline" (click)="showDatePicker(item)"></i>
                 </div>
                 <div class="_bottom">

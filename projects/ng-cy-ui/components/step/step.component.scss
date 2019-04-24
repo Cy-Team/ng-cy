@@ -83,6 +83,10 @@ $labelColor: #fff;
     }
 
     ._top {
+        &._disabled {
+            color: #5080b3;
+        }
+
         color: $labelColor;
         font-size: 18px;
 
@@ -93,12 +97,15 @@ $labelColor: #fff;
 
         ._time_val {
             display: inline-block;
-            margin-right: 10px
+            margin-right: 10px;
         }
     }
-
+    
     ._bottom {
         color: $labelColor;
         font-size: $labelFontSize;
+        ._container{
+            user-select: none;
+        }
     }
 }

@@ -13,7 +13,8 @@ export class AppComponent implements OnInit {
   SelectorStepIndex = 1;
   StepSource = [{
     date: '2019-02-02',
-    content: '内容1'
+    content: '内容1',
+    disabled: true
   }, {
     date: '2019-02-04',
     content: '内容2'
