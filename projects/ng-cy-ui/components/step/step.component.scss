@@ -17,7 +17,6 @@ $labelColor: #fff;
     position: relative;
     height: $stepHeight;
     cursor: pointer;
-    overflow: hidden;
 
     &::before,
     &::after {
