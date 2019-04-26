@@ -21,7 +21,19 @@ export class AppComponent implements OnInit {
   }, {
     date: '2019-02-05',
     content: '内容2'
-  }];
+    }, {
+      date: '2019-02-05',
+      content: '内容2'
+    }, {
+      date: '2019-02-05',
+      content: '内容2'
+    }, {
+      date: '2019-02-05',
+      content: '内容2'
+    }, {
+      date: '2019-02-05',
+      content: '内容2'
+    }];
 
   panels = [
     {

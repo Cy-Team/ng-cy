@@ -9,6 +9,7 @@ export class StepComponent implements OnInit {
 
   @Input() StepSource: any[];
   @Input() SelectorStepIndex: number;
+  @Input() MaxWidth: number;
   @ContentChild('container') containerTemp: ElementRef;
 
 

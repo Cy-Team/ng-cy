@@ -9,6 +9,16 @@ $pointWidth: 10px; //箭头宽度（凹陷宽度）
 $labelFontSize: 16px;
 $labelColor: #fff;
 
+._cy_step {
+    overflow: hidden;
+    overflow-x: auto;
+    padding: 5px;
+
+    ._cy_step_list {
+        width: max-content;
+    }
+}
+
 ._step_item {
     display: inline-block;
     background-color: $current;
@@ -100,11 +110,12 @@ $labelColor: #fff;
             margin-right: 10px;
         }
     }
-    
+
     ._bottom {
         color: $labelColor;
         font-size: $labelFontSize;
-        ._container{
+
+        ._container {
             user-select: none;
         }
     }

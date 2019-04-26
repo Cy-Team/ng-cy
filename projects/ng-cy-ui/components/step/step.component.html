@@ -9,27 +9,29 @@
         02-06前公告挂网
     </div>
 </div> -->
-<div class="_cy_step">
-    <ng-container *ngFor="let item of StepSource;let i=index;">
-        <div class="_step_item {{ SelectorStepIndex - 1 ===i? 'active': ''}}">
-            <ng-template [ngTemplateOutlet]="containerTemp" [ngTemplateOutletContext]="item">
-            </ng-template>
-            <ng-container *ngIf="!containerTemp">
-                <div class="_top {{ !!item.disabled ? '_disabled' : ''}}">
-                    <span class="_time_val">{{ item.date | date: 'MM-dd' }}</span>
-                    
-                    <ng-container *ngIf="!item.disabled">
-                        <div class="_time_selector">
-                            <nz-date-picker [nzOpen]="item.TimeOpen" [(ngModel)]="item.date"
-                                (ngModelChange)="onChange($event, item)"></nz-date-picker>
-                        </div>
-                    </ng-container>
-                    <i nz-icon nzType="calendar" nzTheme="outline" (click)="showDatePicker(item)"></i>
-                </div>
-                <div class="_bottom">
-                    <span class="_container">{{item.content}}</span>
-                </div>
-            </ng-container>
-        </div>
-    </ng-container>
+<div class="_cy_step" [style.max-width.px]="MaxWidth">
+    <div class="_cy_step_list" >
+        <ng-container *ngFor="let item of StepSource;let i=index;">
+            <div class="_step_item {{ SelectorStepIndex - 1 ===i? 'active': ''}}">
+                <ng-template [ngTemplateOutlet]="containerTemp" [ngTemplateOutletContext]="item">
+                </ng-template>
+                <ng-container *ngIf="!containerTemp">
+                    <div class="_top {{ !!item.disabled ? '_disabled' : ''}}">
+                        <span class="_time_val">{{ item.date | date: 'MM-dd' }}</span>
+
+                        <ng-container *ngIf="!item.disabled">
+                            <div class="_time_selector">
+                                <nz-date-picker [nzOpen]="item.TimeOpen" [(ngModel)]="item.date"
+                                    (ngModelChange)="onChange($event, item)"></nz-date-picker>
+                            </div>
+                        </ng-container>
+                        <i nz-icon nzType="calendar" nzTheme="outline" (click)="showDatePicker(item)"></i>
+                    </div>
+                    <div class="_bottom">
+                        <span class="_container">{{item.content}}</span>
+                    </div>
+                </ng-container>
+            </div>
+        </ng-container>
+    </div>
 </div>
