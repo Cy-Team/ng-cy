@@ -142,6 +142,9 @@
                     "options": {
                         "tsConfig": "projects/ng-cy-ui/tsconfig.lib.json",
                         "project": "projects/ng-cy-ui/ng-package.json",
+                        "assets": [
+                            "src/assets"
+                        ],
                         "styles": [
                             "src/styles.css",
                             "node_modules/ng-zorro-antd/ng-zorro-antd.min.css"

@@ -5,11 +5,14 @@ import { UpDownModule } from './layout/up-down/up-down.module';
 import { LeftRightModule } from './layout/left-right/left-right.module';
 import { HeadlineModule } from './layout/headline/headline.module';
 import { StepModule } from './step/step.module';
+import { ExcelTempModule } from './excel-temp/excel-temp.module';
+
 
 export * from './doc-sign';
 export * from './layout';
 export * from './step';
-export * from './util';
+export * from './excel-temp';
+// export * from './util';
 
 @NgModule({
   exports: [
@@ -20,7 +23,7 @@ export * from './util';
     UpDownModule,
     LeftRightModule,
     HeadlineModule,
-
+    ExcelTempModule,
     StepModule
   ]
 })

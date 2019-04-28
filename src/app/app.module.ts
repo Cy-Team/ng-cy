@@ -8,10 +8,20 @@ import { NgCyUiModule } from 'projects/ng-cy-ui/components/ng-cy-ui.module';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ExcelTempComponent } from './excel-temp/excel-temp.component';
+import { RouterModule } from '@angular/router';
+
+const router = [
+  {
+    path: 'exceltemp',
+    component: ExcelTempComponent
+  },
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ExcelTempComponent
   ],
   imports: [
     BrowserModule,
@@ -19,6 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
     // NgZorroAntdModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    RouterModule.forRoot(router)
     // FormsModule
   ],
   providers: [
