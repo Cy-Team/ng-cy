@@ -10,7 +10,7 @@ import $ from 'jquery';
 })
 export class ExcelTempComponent implements OnInit {
 
-  @Input() TempHTML: string; // 模版HTML，优先于模版路径
+  // @Input() TempHTML: string; // 模版HTML，优先于模版路径
   @Input() TempData: any; // 模版数据
 
   @Input() IsMulti: boolean; // 是否多表
@@ -18,34 +18,28 @@ export class ExcelTempComponent implements OnInit {
   @Input() IsTemplet: boolean; // 是否只显示模版
 
   defaultUrl: SafeResourceUrl;
-
-  TempIndex = [];
+  SelectorTabIndex = 0;
   constructor(
     private sanitizer: DomSanitizer
   ) { }
 
   ngOnInit() {
-    this.MultiItem.map(item => {
+    // 预处理是否多表，不是则只取第一项
+    if (!this.IsMulti) {
+      this.MultiItem = [ this.MultiItem.length > 0 ? this.MultiItem[0] : {}];
+    }
+    this.MultiItem.map((item) => {
       item.src = this.sanitizer.bypassSecurityTrustResourceUrl(item.src);
       return item;
     });
   }
 
-  // tslint:disable-next-line:use-life-cycle-interface
-  private ngAfterViewChecked(): void {
-    // if (this.MultiItem.length > 0 && this.MultiItem[0].TempHTML) {
-    //   this.MultiItem.forEach((item, index) => {
-    //     $('#ifr_' + index).contentDocument.body.innerHTML = item.TempHTML;
-    //   });
-    // }
-  }
-
-  IframeOnload(event, i) {
+  IframeOnload(event, item) {
     // console.log(event, item);
-    this.TempIndex.push({
-      index: i,
-      el: $(event.currentTarget.contentDocument.body)
-    });
+    if (item && item['src']) {
+      item.bHeight = event.currentTarget.contentDocument.body.scrollHeight + 30;
+      item.bWidth = event.currentTarget.contentDocument.body.scrollWidth;
+    }
   }
 
 }

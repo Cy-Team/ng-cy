@@ -1,16 +1,23 @@
-<div class="_excel_temp">
+<div class="_excel_temp position_0">
   <ng-container *ngIf="IsMulti">
-    <div class="_excel_tabs"></div>
+    <div class="_excel_tabs">
+      <nz-tabset [(nzSelectedIndex)]="SelectorTabIndex">
+        <ng-container *ngFor="let item of MultiItem; let i = index;">
+          <nz-tab [nzTitle]="item.name">
+          </nz-tab>
+        </ng-container>
+      </nz-tabset>
+    </div>
   </ng-container>
   <!-- <div class="_excel_core"></div> -->
-  <div class="_excel_container">
+  <div class="_excel_container position_0" [ngStyle]="{ 'top.px': IsMulti?50:0 }">
     <ng-container *ngIf="MultiItem.length > 0; else errorTmp">
-      <div class="_excel_ifr">
         <ng-container *ngFor="let item of MultiItem; let i = index;">
-          <iframe [attr.id]="'ifr_' + i" [attr.src]="item.src || defaultUrl" frameborder="0" width="100%"
-            height="100%" (load)="IframeOnload($event, i)"></iframe>
+          <div class="_excel_ifr position_0" [ngStyle]="{ 'display': i===SelectorTabIndex?'block':'none' }">
+          <iframe  class="ifr position_0" [attr.src]="item.src" frameborder="0" width="100%" height="100%"
+            (load)="IframeOnload($event, item)"></iframe>
+          </div>
         </ng-container>
-      </div>
     </ng-container>
     <ng-template #errorTmp>
       <span>未传递 MultiItem 参数</span>
