@@ -5,7 +5,7 @@
             <ng-template [ngTemplateOutlet]="leftTmp" [ngTemplateOutletContext]="{ psnData: { name : '张三' } }"></ng-template>
             <div class="swtch-tip" [ngClass]="{ 'cyhide': !swtchState }" (click)="switchTip()">
                 <!-- <i class="fa " [ngClass]="{ 'fa-ancye-double-left' : !swtchState, 'fa-ancye-double-right': swtchState }" aria-hidden="true"></i> -->
-                {{ swtchState? ')': '( '}}
+                {{ swtchState? '>': '<'}}
             </div>
         </div>
 
