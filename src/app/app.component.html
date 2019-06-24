@@ -18,12 +18,11 @@
                 <cy-headline [title]="'人员信息'">
                     <ng-template #container>
                         <a href="javascript:;">添加人员</a>
-                        <a  routerLink="/exceltemp">Excel模版</a>
                     </ng-template>
                 </cy-headline>
                 <div class="excelshow">
                     <!-- <cy-doc-sign [TempHTML]="TempHTML" [(TempData)]="TempData" #excel1></cy-doc-sign> -->
-                    <router-outlet></router-outlet>
+                    <!-- <router-outlet></router-outlet> -->
                     <!-- <cy-doc-sign></cy-doc-sign> -->
                 </div>
                 <button (click)="getTempData()">获得数据</button>
