@@ -8,12 +8,15 @@
 
 .cy-left {
     width: 200px;
-    border-right: 2px solid #EFF2F7;
     height: 100%;
     float: left;
     background-color: #fff;
     position: relative;
     margin-right: -200px;
+}
+
+.cy-left.interval {
+    border-right: 2px solid #EFF2F7;
 }
 
 .cy-left .swtch-tip {

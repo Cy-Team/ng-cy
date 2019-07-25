@@ -8,6 +8,8 @@ import { Component, OnInit, Input, ContentChild, ElementRef } from '@angular/cor
 export class LeftRightComponent implements OnInit {
 
   @Input() leftwidth: number;
+  // tslint:disable-next-line:no-inferrable-types
+  @Input() intervalSize: number = 0;
   // tslint:disable-next-line:no-input-rename
   @Input('rightbgcolor') bgcolor = '';
   @ContentChild('left') leftTmp: ElementRef;
